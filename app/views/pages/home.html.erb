@@ -1,0 +1,20 @@
+<h1>Welcome to the Library Management System</h1>
+
+<% if current_user %>
+
+
+<%= link_to "Book List",  books_path %>
+
+<%= link_to "BooksIssueDates", issue_book_dates_path %>
+
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
+<% else %>
+
+<%= link_to "Sign up", new_user_registration_path %>
+
+<%= link_to "Sign in ", new_user_session_path %>
+
+<% end %>
+
+

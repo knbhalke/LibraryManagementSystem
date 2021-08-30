@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Issue Book Dates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Issuedate</th>
+      <th>User</th>
+      <th>Book</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @issue_book_dates.each do |issue_book_date| %>
+      <tr>
+        <td><%= issue_book_date.issuedate %></td>
+        <td><%= issue_book_date.user %></td>
+        <td><%= issue_book_date.book %></td>
+        <td><%= link_to 'Show', issue_book_date %></td>
+        <td><%= link_to 'Edit', edit_issue_book_date_path(issue_book_date) %></td>
+        <td><%= link_to 'Destroy', issue_book_date, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Issue Book Date', new_issue_book_date_path %>

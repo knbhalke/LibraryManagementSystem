@@ -1,0 +1,32 @@
+<%= form_with(model: issue_book_date, local: true) do |form| %>
+  <% if issue_book_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(issue_book_date.errors.count, "error") %> prohibited this issue_book_date from being saved:</h2>
+
+      <ul>
+      <% issue_book_date.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :issuedate %>
+    <%= form.datetime_select :issuedate %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book_id %>
+    <%= form.text_field :book_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
